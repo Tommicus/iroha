@@ -12,7 +12,7 @@ The following is a short set of guidelines for contributing to Iroha.
 
 - [Reporting bugs](#reporting-bugs)
 - [Suggesting Enhancements](#suggesting-enhancements)
-- [Asking Question](#asking-question)
+- [Asking Questions](#asking-questions)
 - [Your First Code Contribution](#your-first-code-contribution)
 - [Pull Requests](#pull-requests)
 
@@ -24,7 +24,10 @@ The following is a short set of guidelines for contributing to Iroha.
 
 ##### [Additional Notes](#additional-notes)
 
-- [Issue and Pull Request Labels](#issue-and-pull-request-labels)
+- [Informational Labels](#informational-labels)
+- [Pull Request and Issue Labels](#pull-request-and-issue-labels)
+- [Issue Labels](#issue-labels)
+- [Pull Request Labels](#pull-request-labels)
 - [Contact Developers](#contact-developers)
 
 
@@ -40,6 +43,7 @@ Bugs are tracked as [GitHub Issues](https://guides.github.com/features/issues/).
     - Write prefix `[Bug]` for the title
     - Use a clear and descriptive title
 - **Body** - include the following sections:
+    - System environment (OS, iroha version)
     - Steps to reproduce
     - Expected behavior
     - Actual behavior
@@ -48,7 +52,7 @@ Bugs are tracked as [GitHub Issues](https://guides.github.com/features/issues/).
 
 ### Suggesting Enhancements
 
-An *enhancement* is a code or idea, which makes **existing code or design** faster, more stable, portable, secure or better in any other way.
+An *enhancement* is a code or idea, which makes **existing** code or design faster, more stable, portable, secure or better in any other way.
 
 Enhancements are tracked as [GitHub Issues](https://guides.github.com/features/issues/). To submit new enhancement, create new Issue and incllude these details:
 
@@ -56,15 +60,15 @@ Enhancements are tracked as [GitHub Issues](https://guides.github.com/features/i
     - Write prefix `[Enhancement]`
     - Use a clear and descriptive title
 - **Body** - include the following sections:
-    - *Motivation* - why do we need it?
     - *Target* - what is going to be improved?
+    - *Motivation* - why do we need it?
     - *Description* - how to implement it?
 
 
 
 ### Asking Questions
 
-A *question* is any discussion that is typically neigher a bug, nor feature requests, nor improvements - "How do I do X?".
+A *question* is any discussion that is typically neigher a bug, nor feature request, nor improvement - "How do I do X?".
 
 Questions are tracked as [Github Issues](https://guides.github.com/features/issues/) or via private messages in [your favourite messenger](#contact-developers).
 
@@ -79,7 +83,7 @@ To submit new question in GitHub Issues, it must include these details:
 
 ### Your First Code Contribution
 
-Read our [C++ Style Guide](#c++-style-guide) and start with beginner-friendly issues with label [`[good-first-issue]`](https://github.com/hyperledger/iroha/issues?q=is:open+is:issue+label:good-first-issue ). 
+Read our [C++ Style Guide](#c++-style-guide) and start with beginner-friendly issues with label [`[good-first-issue]`](https://github.com/hyperledger/iroha/issues?q=is:open+is:issue+label:good-first-issue ). Indicate somehow that you are working on this task.
 
 
 
@@ -92,6 +96,8 @@ Read our [C++ Style Guide](#c++-style-guide) and start with beginner-friendly is
 - Every pull request should be reviewed and **get at least two approvals**.
 
 - Do not include issue numbers in the PR title or commit messages.
+
+- Use [keywords for closing issues](https://help.github.com/articles/closing-issues-using-keywords/).
 
 - Include issue numbers in Pull Request body only.
 
@@ -121,10 +127,11 @@ Read our [C++ Style Guide](#c++-style-guide) and start with beginner-friendly is
 - **Use present tense** ("Add feautre", not "Added feature").
 - **Use imperative mood** ("Deploy docker to..." not "Deploys docker to...").
 - Write meaningful commit message.
-- **Sign every commit** with [DCO](https://github.com/apps/dco): `Signed-off-by: $NAME <$EMAIL>`. 
+- **Signed-off every commit** with [DCO](https://github.com/apps/dco): `Signed-off-by: $NAME <$EMAIL>`. 
     You can do it automatically using `git commit -s`.
 - Do not include PR or Issue number in commit message. 
 - Limit the first line of commit message to 50 characters or less.
+- First line of commit message must contain summary of work done, second line must contain empty line, third and other lines can contain list of commit changes.
 - When only changing documentation, include `[ci skip]` in the commit description.
 - We use mixed approach of [Github Flow](https://guides.github.com/introduction/flow/) and [Git Flow](http://nvie.com/posts/a-successful-git-branching-model/). More at [Iroha Working Agreement](https://github.com/hyperledger/iroha/wiki/Iroha-working-agreement#2-version-control-system).
 
@@ -147,38 +154,48 @@ Read our [C++ Style Guide](#c++-style-guide) and start with beginner-friendly is
 - Document all public API: methods, functions, members, templates, classes...
 
 
-
 ## Additional Notes
 
-### Issue and Pull Request Labels
-
-Labels help us to track and manage issues and pull requests.
-
-| Label Name              | Description                              |
-| :---------------------- | ---------------------------------------- |
-| `enhancement:code`      | Any improvements in **existing** code.   |
-| `enhancement:idea`      | Fresh ideas to enhance existing architecture, design.   |
-| `bug:needs-reproduction`| Bugs or reports that are very likely to be bugs. |
-| `bug:confirmed`         | Confirmed bug by maintainers. |
-| `question`              | Questions more than bug reports or feature requests - "How do I do X" |
-| `feature`               | Feature requests.                        |
-| `good-first-issue`      | Good starting point to begin contributing. |
-| `help-wanted`           | Maintainers ask for help to work on this issue. |
-| `accepted`              | Pull request is accepted and can be merged. |
-| `candidate-for-closing` | Outdated Issue/Pull Request and is candidate for closing. |
-| `challeging-task`       | Small but hard task.                     |
-| `needs-correction`      | Pull request or Issue that should be corrected by opener. |
-| `needs-review`          | Pull request or Issue that should be reviewed by maintainer. |
-| `pri:low`               | Low priority.                            |
-| `pri:normal`            | Normal priority.                         |
-| `pri:important`         | Important issue.                         |
-| `pri:critical`          | Critical issue. Must be fixed immediately. |
-| `pri:blocker`           | Issue blocked on other issues.           |
-| `status:in-progress`    | Work in progress.                        |
+### Informational Labels
+| Label Name              | Description                                                      |
+| :---------------------- | ---------------------------------------------------------------- |
+| `pri:low`               | Low priority.                                                    |
+| `pri:normal`            | Normal priority.                                                 |
+| `pri:important`         | Important issue.                                                 |
+| `pri:critical`          | Critical issue. Must be fixed immediately.                       |
+| `pri:blocker`           | Issue blocked by other issues.                                   |
+| `status:in-progress`    | Work in progress.                                                |
 | `status:inactive`       | Inactive PR or Issue. Likely to become a `candidate-for-closing` |
-| `status:pending`        | Issue is posted, but is not reviewed by maintainers. |
-| `status:resolved`       | Resolved issue.                          |
-| `status:wontfix`        | Core team has decided not to fix these issue for now. |
+| `status:wontfix`        | Core team has decided not to fix these issue for now.            |
+
+### Issue and Pull Request labels
+
+| Label Name              | Description                                                  |
+| :---------------------- | ------------------------------------------------------------ |
+| `enhancement:code`      | Any improvements in **existing** code.                       |
+| `enhancement:idea`      | Fresh ideas to enhance existing architecture, design.        |
+| `bug:needs-reproduction`| Bugs or reports that are very likely to be bugs.             |
+| `bug:confirmed`         | Confirmed bug by maintainers.                                |
+| `feature`               | Feature requests -- completely new functionality.            |
+| `accepted`              | Pull request is accepted and can be merged.                  |
+| `candidate-for-closing` | Outdated Pull Request / Issue. Lasts for more than 14 days.  |
+| `needs-correction`      | Pull Request / Issue that should be corrected by author.     |
+| `needs-review`          | Pull Request / Issue that should be reviewed by maintainer.  |
+
+
+### Issue Labels
+
+| Label Name              | Description                                                           |
+| :---------------------- | --------------------------------------------------------------------- |
+| `question`              | Questions more than bug reports or feature requests - "How do I do X" |
+| `good-first-issue`      | Good starting point to begin contributing.                            |
+| `help-wanted`           | Maintainers ask for help to work on this issue.                       |
+
+### Pull Request Labels
+
+| Label Name              | Description                                 |
+| :---------------------- | ------------------------------------------- |
+| `accepted`              | Pull request is accepted and can be merged. |
 
 
 ### Contact Developers
